@@ -1,0 +1,172 @@
+\documentclass[12pt,twoside]{jsarticle}
+
+%%%%% ----- パッケージ ----- %%%%%
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[deluxe]{otf}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{ascmac}
+\usepackage{listings}
+
+%%%%% ----- 余白設定 ----- %%%%%
+\setlength{\textheight}{\paperheight}
+\setlength{\topmargin}{1cm}
+\setlength{\headsep}{1cm}
+\addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+\addtolength{\textheight}{-60truemm}
+
+%%%%% ----- コマンド設定 ----- %%%%%
+\newcommand{\figref}[1]{Fig. \ref{#1}}
+\newcommand{\tabref}[1]{Table. \ref{#1}}
+\newcommand{\eref}[1]{式(\ref{#1})}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table}
+\renewcommand{\postsectionname}{章}
+\titleformat*{\section}{\huge\bfseries}
+
+%%%%% ----- コード入力設定 ----- %%%%%
+\lstset{
+basicstyle={\ttfamily\small},
+frame=tRBl,
+framesep=10pt,
+breaklines=true,
+linewidth=12cm,
+lineskip=-0.5ex,
+tabsize=2
+}
+
+%%%%% ----- 表紙設定 ----- %%%%%
+\input{./title.tex}
+
+%%%%% ----- ヘッダとフッタ ----- %%%%%
+\fancyhead{}
+\fancyhead[Ro]{\rightmark}
+\fancyfoot{}
+\fancyfoot[Ro]{\thepage}
+\fancyfoot[LE]{\thepage}
+
+%%%%% ----- ここから内容 ----- %%%%%
+\begin{document}
+
+%%%%% ----- 表紙 ----- %%%%%
+\pagestyle{plain}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\ 
+\newpage
+
+%%%%% ----- 目次 ----- %%%%%
+\pagestyle{fancy}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+%%%%% ----- 目次が奇数ページの場合はここのコメントを外す ----- %%%%%
+%\fancyhead[Ro]{}
+%\fancyhead[RE]{\rightmark}
+%\fancyfoot[Ro]{}
+%\fancyfoot[LE]{}
+%\fancyfoot[RE]{\thepage}
+%\fancyfoot[Lo]{\thepage}
+
+%%%%% ----- ここから本文 ----- %%%%%
+\pagenumbering{arabic}
+
+%%%%% ----- 解説を入れておいたよ ----- %%%%%
+\section {LaTeXの解説 基礎}
+\vspace{10pt}
+\input{./template1.tex}
+\clearpage
+\section {LaTeXの解説 サブセクション}
+\vspace{10pt}
+\input{./template2.tex}
+\clearpage
+\section {LaTeXの解説 画像}
+\vspace{10pt}
+\input{./template3.tex}
+\clearpage
+\section {LaTeXの解説 その他}
+\vspace{10pt}
+\input{./template4.tex}
+\clearpage
+
+%%%%% ----- はじめに ----- %%%%%
+% [intro.tex]というTEXファイルを用意する
+\section{はじめに}
+\vspace{10pt}
+\input{./intro.tex}
+\clearpage
+
+%%%%% ----- 開発経緯 ----- %%%%%
+% [story.tex]というTEXファイルを用意する
+\section{開発経緯}
+\vspace{10pt}
+\input{./story.tex}
+\clearpage
+
+%%%%% ----- 設計 ----- %%%%%
+% [plan.tex]というTEXファイルを用意する
+\section{設計}
+\vspace{10pt}
+\input{./plan.tex}
+\clearpage
+
+%%%%% ----- 実装 ----- %%%%%
+% [implement.tex]というTEXファイルを用意する
+\section{実装}
+\vspace{10pt}
+\input{./implement.tex}
+\clearpage
+
+%%%%% ----- 検証 ----- %%%%%
+% [verification.tex]というTEXファイルを用意する
+\section{検証}
+\vspace{10pt}
+\input{./validation.tex}
+\clearpage
+
+%%%%% ----- 考察 ----- %%%%%
+% [consideration.tex]というTEXファイルを用意する
+\section{考察}
+\vspace{10pt}
+\input{./consideration.tex}
+\clearpage
+
+%%%%% ----- 総評 ----- %%%%%
+% [asess.tex]というTEXファイルを用意する
+\section{総評}
+\vspace{10pt}
+\input{./assess.tex}
+\clearpage
+
+%%%%% ----- おわりに ----- %%%%%
+% [final.tex]というTEXファイルを用意する
+\section{おわりに}
+\vspace{10pt}
+\input{./final.tex}
+\clearpage
+
+%%%%% ----- 謝辞 ----- %%%%%
+% [thanks.tex]というTEXファイルを用意する
+\section{謝辞}
+\vspace{10pt}
+\input{./thanks.tex}
+\clearpage
+
+%%%%% ----- 参考文献 ----- %%%%%
+% [reference.tex]というTEXファイルを用意する
+\vspace{10pt}
+\input{./reference.tex}
+\clearpage
+
+%%%%% ----- 付録 ----- %%%%%
+% [appendix.tex]というTEXファイルを用意する
+\appendix
+\section{付録名}
+\vspace{10pt}
+\input{./appendix.tex}
+
+\end{document}

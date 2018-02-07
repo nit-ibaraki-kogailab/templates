@@ -1,0 +1,25 @@
+前章で実装したプログラムを実際に実行し，設定したコンセプトを達成できているか確かめる．
+\vspace{5pt}
+\subsection{関数名や変数名を明瞭化}
+関数名や変数名を明瞭化する事によって拡張や改変する際にコードの役割が分かりやすくなる．
+\begin{itemize}
+	\item DrawやSetupなど，一目で何をするクラスなのかがよく分かるようになったと言える．ARクラスはそのままだと何をするクラスなのかが分かり辛いが，AR全般の設定をしている為このようなクラス名となった．
+\end{itemize}
+\vspace{5pt}
+\subsection{各クラスの役割を明瞭化}
+役割ごとにクラスを分ける事で，改変や拡張時にどこを変更するかがすぐに分かる．また改変時にエラーが生じた際，どこにエラーがあるかが分かりやすくなる．
+\begin{itemize}
+	\item MainActivity, Setup, AR, Draw, Cube等，クラスごとに役割を分け，何をするクラスなのかを明瞭化することが出来た．
+\end{itemize}
+\vspace{5pt}
+\subsection{拡張しやすい構成に}
+提供されたライブラリを使ってできることは限られており，またARを用いたAndroidプログラミングの学習用途であれば，拡張しやすい構成にすることは重要なことであると言える．
+\begin{itemize}
+	\item 拡張するにはライブラリ内を変更する必要があり，初学者には厳しいと考える．設計時の対象者では拡張は難しいだろう．拡張性については達成できたとは言い難い．
+\end{itemize}
+\vspace{5pt}
+\subsection{MainActivityは最小限に}
+MainActivityはCやJavaで言うMain関数である．Main関数は処理するクラスではなく，メソッドを実行するクラスであるため，ここでの処理は出来る限り最小限にすることが望ましい．
+\begin{itemize}
+	\item MainActivityはSetupクラスのsetupメソッドを呼び出すだけとなっている．その後はSetupクラスが初期設定をした後，ライブラリ内のARActivityが処理を引き継ぐ．
+\end{itemize}

@@ -1,0 +1,55 @@
+先ほど述べたように拡張現実感は仮想現実感に比べ発展してるとは言い難い．近い将来，スマートグラス\cite{SG}が普及しARはごく身近な技術になると予想しているが，今の現状を鑑みるとまだまだ先の話と言われても否定できない．他にも車のカーナビをARを用いてフロントガラス等に投影する案\cite{ARnavi}などがあるが普及には至っていない．しかしスマートフォンの登場で一時期話題になった事もあり全く実用化されていない訳ではなく，以下に今の拡張現実感の現状を示す．
+
+\vspace{5pt}
+\subsection{展開している環境}
+以下に今までに拡張現実感を用いたアプリケーションが提供されている環境の一例を挙げる．
+\vspace{5pt}
+\begin{itemize}
+ \item C\#
+ \item C++
+ \item Java
+ \item Unity
+ \item Swift(iOS, macOS)
+ \item Android
+ \item Processing
+\end{itemize}
+\vspace{5pt}
+
+\subsection{開発されているアプリケーション}
+以下に今までに開発されてきたアプリケーションで拡張現実感がどのように使われてきたかの一例を示す．
+\begin{itemize}
+ \item 現実世界に3DCGデータを合成するアプリケーション．\\
+       \begin{itemize}
+	\item 拡張現実感の基礎的な機能である．マーカを使用しマーカ上に表示するマーカ型と，マーカを使用せずキャプチャした画像を処理して自動で3Dオブジェクトを表示するマーカレス型の2種類がある．
+	\item マーカ型はマーカを使用するため表示場所などは全て内部で処理できる．そのため比較的簡単に実現が可能である．しかしマーカレス型は画像処理が必要であるためマーカ型に比べ必要な知識が多くなってくる．
+       \end{itemize}
+       \newpage
+ \item 写した物の説明が表示されるアプリケーション
+       \begin{itemize}
+	\item 何か説明したい物の横にマーカを設置し，それを読み取ってもらうことで説明を表示する．メリットとして，一つのマーカでたくさんの情報や複数の言語に対応できること，情報の更新が楽になることが挙げられる．情報の更新については，マーカを変える必要はなくデータベース上の情報を変えるだけでいい為，説明をそのまま掲示する場合に比べ格段に便利である．
+	\item また，そのまま掲示する場合に比べとても大きなメリットとなるのが動画の配信である．ディスプレイを設置することなく使用者のスマートフォン上で動画を再生できる為，低コストで動画の配信が可能となる．
+       \end{itemize}
+\end{itemize}
+\vspace{5pt}
+
+\subsection{提供されているライブラリ}
+以下に今までに提供されている拡張現実感を実現するためのライブラリを示す．
+
+\begin{itemize}
+ \item ARToolKit\cite{ARToolKit}
+       \begin{itemize}
+	\item OS X，Linux，Windows，iOS，Androidなど様々なプラットフォームで提供されている．
+       \end{itemize}
+ \item NyARToolkit\cite{NyARToolkit}
+       \begin{itemize}
+	\item ActionScript，Android，C++，C\#，Java，Processing，Unity，Windowsなど様々なプラットフォームで提供されている．
+       \end{itemize}
+ \item AndAR\cite{AndAR}
+       \begin{itemize}
+	\item 近年登場したAndroid専用のARライブラリ．プラットフォーム上でのARを最小限の労力で実現することを目的に作成されている．
+       \end{itemize}
+\end{itemize}	
+
+%\par
+%\vspace{5pt}
+拡張現実感を用いたライブラリは数が少なく，上記の3つが主に使われている．ARToolKitは他に比べ早い時期から提供されており，今も更新が続いている．NyARToolkitはARToolKitを元に実装したビジョンベースライブラリであり，Processingなどで簡単に拡張現実感を実現するために作られたライブラリを提供している．AndARはAndroidに特化したライブラリで，拡張現実感の実装を簡単に行えるよう作られている．

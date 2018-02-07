@@ -1,0 +1,25 @@
+\subsection{画像の挿入}
+%\vspace{5pt}
+画像を挿入したい時は，このファイルの最後にあるセットを組み込んでね．
+
+\subsection{使用例}
+%\vspace{5pt}
+進捗が一向に進まない...そんな友人に送るべき画像をFig.\ref{fig:class}に示す．この画像を見せた時の反応は以下の5種類に分けられる．
+
+\begin{itemize}
+ \item 顔は笑いながらキレる
+ \item 無表情でキレる
+ \item 眉を吊り上げてキレる
+ \item 無言でキレる
+ \item 殴ってくる
+\end{itemize}
+
+画像を入れた際の改ページは注意が必要．改ページする前に全ての画像を出力したい時は，\ newpage \footnote{空白を開けているのはコマンドを実行して欲しく無いため}ではなく\ clearpage を使う．\ newpage を使用した場合，まだ出力されていない画像は改ページ後に出力される．
+
+%%%%% ----- ここから画像挿入コマンド ----- %%%%%
+\begin{figure}[tb]
+\centering
+\includegraphics[width=12cm]{fig/class.pdf} %ここに画像ファイルの名前を拡張子ごと入力，12cmは画像の大きさ
+\caption{Class diagram}　%題名はここ
+\label{fig:class} %自由に名前をつけられる．図番号を呼び出す際に使う
+\end{figure}
